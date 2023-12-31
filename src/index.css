@@ -1,0 +1,65 @@
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#kalkualcka {
+  text-align: center;
+  max-width: 500px;
+  background-color: rgb(250, 236, 255);
+  border:  solid black;
+  padding: 32px;
+  border-radius: 50px;
+}
+
+#display {
+  width: 100%;
+  height: 68px;
+  font-size: 26px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  text-align: right;
+  border: solid black;
+  outline: none;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  width: 75px;
+  height: 75px;
+  font-size: 36px;
+  border-radius: 50px;
+  color: #CCA0D6;
+  cursor: pointer;
+  background-color: #161118;
+  border: solid black;
+}
+
+button:hover {
+  background-color: hsl(0, 0%, 30%);
+}
+button:active {
+  background-color: hsl(0, 0%, 60%);
+}
+
+#calculate {
+  background-color: #8D349F;
+}
+
+#calculate:hover {
+  background-color: #94629e;
+}
+
+#calculate:active {
+  background-color: #e3aaee;
+}

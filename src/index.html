@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div id="kalkualcka">
+      <input type="display"  id="display">
+      
+      <div id="buttons">
+        
+        <button onclick="clearDisplay(), audio.play();" class="operator">C</button>
+        <button onclick="backspace(), audio.play();"><i class="fa-solid fa-delete-left"></i></i></button>  
+        <button onclick="appendToDisplay('('), audio.play();" class="operator">(</button>
+        <button onclick="appendToDisplay(')'), audio.play();" class="operator">)</button>
+        
+        
+        <button onclick="appendToDisplay('7'), audio.play();">7</button>
+        <button onclick="appendToDisplay('8'), audio.play();">8</button>
+        <button onclick="appendToDisplay('9'), audio.play();">9</button>
+        <button onclick="appendToDisplay('/'), audio.play();" class="operator">/</button>
+        
+        
+        <button onclick="appendToDisplay('4'), audio.play();">4</button>
+        <button onclick="appendToDisplay('5'), audio.play();">5</button>
+        <button onclick="appendToDisplay('6'), audio.play();">6</button>
+        <button onclick="appendToDisplay('*'), audio.play();" class="operator">*</button>
+        
+        
+        <button onclick="appendToDisplay('1'), audio.play();">1</button>
+        <button onclick="appendToDisplay('2'), audio.play();">2</button>
+        <button onclick="appendToDisplay('3'), audio.play();">3</button>
+        <button onclick="appendToDisplay('-'), audio.play();" class="operator">-</button>
+        
+
+        <button onclick="appendToDisplay('0'), audio.play();">0</button>
+        <button onclick="appendToDisplay('.'), audio.play();">,</button>
+        <button onclick="appendToDisplay('+'), audio.play();" class="operator">+</button>
+        <button id="calculate" onclick="calculate(), audio.play();">=</button>
+        
+        
+      </div>
+    </div>
+  </body>
+  <script>
+    const display = document.getElementById("display");
+
+//zobrazeni na display
+appendToDisplay = (input) => {
+  display.value += input;
+}
+
+//vymaze cely display
+clearDisplay = () => {
+  display.value = "";
+}
+
+// se rovna
+calculate = () => {
+  try {
+    display.value = eval(display.value);
+  } catch (error) {
+    display.value = "Error";
+  }
+}
+//vymazani o 1 zpet
+ backspace = () => {
+    display.value = display.value.slice(0, -1);
+    document.getElementById('display').value = display.value;
+}
+//zvuk kliknuti
+const audio = new Audio();
+audio.src = "./click-21156.mp3";
+
+  </script>
+</html>
